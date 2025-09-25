@@ -1,57 +1,17 @@
 1. SELECT * and Specific Columns
 
-Get all data from Users:
-SELECT * FROM Users;
+SELECT * FROM Vehicle;
+SELECT OwnerName, VehicleNumber FROM Vehicle;
 
+2. WHERE, AND, OR, LIKE, BETWEEN
 
+SELECT * FROM ParkingSlot WHERE Status='Available';
+SELECT * FROM Booking WHERE Status='Active' AND PaymentStatus='Pending';
+SELECT * FROM Vehicle WHERE VehicleType='Car' OR VehicleType='Bike';
+SELECT * FROM Vehicle WHERE OwnerName LIKE 'Pav%';
+SELECT * FROM Payment WHERE Amount BETWEEN 50 AND 100;
 
-Get only name and email of users:
-SELECT name, email FROM Users;
+3. ORDER BY
 
-Get all parking slots:
-SELECT * FROM ParkingSlots;
-
-2. Apply WHERE, AND, OR, LIKE, BETWEEN
-
-WHERE + AND + OR
-
-Find all available slots in Lot 1:
-SELECT * 
-FROM ParkingSlots 
-WHERE lot_id = 1 AND status = 'available';
-
-Find users with gmail or yahoo email:
-SELECT * 
-FROM Users 
-WHERE email LIKE '%@gmail.com' OR email LIKE '%@yahoo.com';
-
-LIKE
-
-Find vehicles starting with "TN" (Tamil Nadu registration):
-SELECT * 
-FROM Vehicles 
-WHERE vehicle_number LIKE 'TN%';
-
-BETWEEN
-
-Find reservations made between 2025-09-01 and 2025-09-15:
-SELECT * 
-FROM Reservations 
-WHERE start_time BETWEEN '2025-09-01' AND '2025-09-15';
-
-3. Sorting with ORDER BY
-
-List users alphabetically by name:
-SELECT * 
-FROM Users 
-ORDER BY name ASC;
-
-Show reservations latest first:
-SELECT * 
-FROM Reservations 
-ORDER BY start_time DESC;
-
-Sort payments by amount (highest first):
-SELECT * 
-FROM Payments 
-ORDER BY amount DESC;
+SELECT * FROM Payment ORDER BY Amount ASC;
+SELECT * FROM Booking ORDER BY StartTime DESC;
