@@ -3,6 +3,8 @@
 Get all data from Users:
 SELECT * FROM Users;
 
+
+
 Get only name and email of users:
 SELECT name, email FROM Users;
 
